@@ -1,0 +1,58 @@
+CREATE DATABASE bankdb;
+
+USE bankdb;
+
+-- Personal Info Table
+CREATE TABLE PersonalInfo (
+    CustomerID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    Gender CHAR(1),
+    Address VARCHAR(255),
+    City VARCHAR(50),
+    State VARCHAR(50),
+    ZipCode VARCHAR(10),
+    PhoneNumber VARCHAR(15),
+    Email VARCHAR(100),
+    AccountOpeningDate DATE NOT NULL,
+    Occupation VARCHAR(100),
+    MaritalStatus VARCHAR(10),
+    Nationality VARCHAR(50),
+    UniqueIDType VARCHAR(50),
+    UniqueIDNumber VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- Customer Reference Info Table
+CREATE TABLE CustomerReferenceInfo (
+    ReferenceID INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerID INT,
+    ReferenceName VARCHAR(100) NOT NULL,
+    ReferenceRelationship VARCHAR(50) NOT NULL,
+    ReferenceContact VARCHAR(15),
+    ReferenceAddress VARCHAR(255),
+    City VARCHAR(50),
+    State VARCHAR(50),
+    ZipCode VARCHAR(10),
+    CONSTRAINT fk_customer_ref FOREIGN KEY (CustomerID) REFERENCES PersonalInfo(CustomerID)
+);
+
+-- Bank Info Table
+CREATE TABLE BankInfo (
+    IFSCCode VARCHAR(11) PRIMARY KEY,
+    BankName VARCHAR(100) NOT NULL,
+    BranchName VARCHAR(100) NOT NULL
+);
+
+-- Account Info Table
+CREATE TABLE AccountInfo (
+    AccountNumber BIGINT PRIMARY KEY,
+    CustomerID INT,
+    IFSCCode VARCHAR(11),
+    AccountType VARCHAR(50) NOT NULL,
+    Balance DECIMAL(15, 2) NOT NULL,
+    OpeningDate DATE NOT NULL,
+    Status VARCHAR(20) NOT NULL,
+    CONSTRAINT fk_customer_account FOREIGN KEY (CustomerID) REFERENCES PersonalInfo(CustomerID),
+    CONSTRAINT fk_ifsc_account FOREIGN KEY (IFSCCode) REFERENCES BankInfo(IFSCCode)
+);

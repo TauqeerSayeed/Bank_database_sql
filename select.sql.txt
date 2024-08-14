@@ -1,0 +1,11 @@
+-- Query to select CustomerID, CustomerName, and BranchName
+SELECT 
+    p.CustomerID, 
+    CONCAT(p.FirstName, ' ', p.LastName) AS CustomerName,
+    b.BranchName
+FROM 
+    PersonalInfo p
+INNER JOIN 
+    AccountInfo a ON p.CustomerID = a.CustomerID
+INNER JOIN 
+    BankInfo b ON a.IFSCCode = b.IFSCCode;

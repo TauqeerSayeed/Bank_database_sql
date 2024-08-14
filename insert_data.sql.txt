@@ -1,0 +1,51 @@
+INSERT INTO PersonalInfo (FirstName, LastName, DateOfBirth, Gender, Address, City, State, ZipCode, PhoneNumber, Email, AccountOpeningDate, Occupation, MaritalStatus, Nationality, UniqueIDType, UniqueIDNumber) 
+VALUES 
+('Amit', 'Sharma', '1985-01-15', 'M', '123 MG Road', 'Mumbai', 'Maharashtra', '400001', '9876543210', 'amit.sharma@example.com', '2024-08-01', 'Software Engineer', 'Single', 'Indian', 'Aadhar', '123456789012'),
+('Sonal', 'Mehta', '1990-05-25', 'F', '45 Pali Hill', 'Mumbai', 'Maharashtra', '400050', '8765432109', 'sonal.mehta@example.com', '2024-08-02', 'Doctor', 'Married', 'Indian', 'Aadhar', '234567890123'),
+('Rajesh', 'Kumar', '1978-03-10', 'M', '98 Bannerghatta Road', 'Bangalore', 'Karnataka', '560076', '7654321098', 'rajesh.kumar@example.com', '2024-08-03', 'Teacher', 'Married', 'Indian', 'Aadhar', '345678901234'),
+('Nidhi', 'Singh', '1992-12-20', 'F', '14 Sarojini Nagar', 'Delhi', 'Delhi', '110023', '6543210987', 'nidhi.singh@example.com', '2024-08-04', 'Lawyer', 'Single', 'Indian', 'Aadhar', '456789012345'),
+('Karan', 'Verma', '1982-07-18', 'M', '9 FC Road', 'Pune', 'Maharashtra', '411005', '5432109876', 'karan.verma@example.com', '2024-08-05', 'Architect', 'Married', 'Indian', 'Aadhar', '567890123456'),
+('Pooja', 'Patel', '1988-11-11', 'F', '27 Law Garden', 'Ahmedabad', 'Gujarat', '380006', '4321098765', 'pooja.patel@example.com', '2024-08-06', 'Businesswoman', 'Single', 'Indian', 'Aadhar', '678901234567'),
+('Arun', 'Nair', '1975-09-30', 'M', '56 Marine Drive', 'Kochi', 'Kerala', '682031', '3210987654', 'arun.nair@example.com', '2024-08-07', 'Consultant', 'Married', 'Indian', 'Aadhar', '789012345678'),
+('Meera', 'Iyer', '1994-08-14', 'F', '11 Gandhi Nagar', 'Chennai', 'Tamil Nadu', '600020', '2109876543', 'meera.iyer@example.com', '2024-08-08', 'Scientist', 'Single', 'Indian', 'Aadhar', '890123456789'),
+('Vikram', 'Singh', '1983-04-22', 'M', '22 Banjara Hills', 'Hyderabad', 'Telangana', '500034', '1098765432', 'vikram.singh@example.com', '2024-08-09', 'Engineer', 'Married', 'Indian', 'Aadhar', '901234567890'),
+('Ritu', 'Chauhan', '1987-06-05', 'F', '67 Jubilee Hills', 'Hyderabad', 'Telangana', '500033', '0987654321', 'ritu.chauhan@example.com', '2024-08-10', 'Designer', 'Married', 'Indian', 'Aadhar', '012345678901');
+
+INSERT INTO CustomerReferenceInfo (CustomerID, ReferenceName, ReferenceRelationship, ReferenceContact, ReferenceAddress, City, State, ZipCode) 
+VALUES 
+(1, 'Rohit Sharma', 'Friend', '9876543210', '12 Andheri East', 'Mumbai', 'Maharashtra', '400069'),
+(2, 'Pooja Verma', 'Sister', '8765432109', '67 Bandra West', 'Mumbai', 'Maharashtra', '400050'),
+(3, 'Sunil Kumar', 'Brother', '7654321098', '89 Koramangala', 'Bangalore', 'Karnataka', '560034'),
+(4, 'Anita Singh', 'Cousin', '6543210987', '23 Connaught Place', 'Delhi', 'Delhi', '110001'),
+(5, 'Rakesh Mehta', 'Friend', '5432109876', '78 Deccan Gymkhana', 'Pune', 'Maharashtra', '411004'),
+(6, 'Anjali Patel', 'Friend', '4321098765', '54 CG Road', 'Ahmedabad', 'Gujarat', '380009'),
+(7, 'Suresh Nair', 'Uncle', '3210987654', '34 Fort Kochi', 'Kochi', 'Kerala', '682001'),
+(8, 'Vijay Iyer', 'Brother', '2109876543', '21 T Nagar', 'Chennai', 'Tamil Nadu', '600017'),
+(9, 'Neha Singh', 'Friend', '1098765432', '89 Banjara Hills', 'Hyderabad', 'Telangana', '500034'),
+(10, 'Amit Chauhan', 'Brother', '0987654321', '45 Gachibowli', 'Hyderabad', 'Telangana', '500032');
+
+INSERT INTO BankInfo (IFSCCode, BankName, BranchName) 
+VALUES 
+('SBIN0001234', 'State Bank of India', 'Andheri East'),
+('HDFC0005678', 'HDFC Bank', 'Bandra West'),
+('ICIC0003456', 'ICICI Bank', 'Koramangala'),
+('PNBN0007890', 'Punjab National Bank', 'Connaught Place'),
+('BOFA0001122', 'Bank of Baroda', 'Deccan Gymkhana'),
+('AXIS0003344', 'Axis Bank', 'CG Road'),
+('KKBK0005566', 'Kotak Mahindra Bank', 'Fort Kochi'),
+('YESB0007788', 'Yes Bank', 'T Nagar'),
+('INDB0009900', 'IndusInd Bank', 'Banjara Hills'),
+('CANB0001133', 'Canara Bank', 'Gachibowli');
+
+INSERT INTO AccountInfo (AccountNumber, CustomerID, IFSCCode, AccountType, Balance, OpeningDate, Status) 
+VALUES 
+(123456789012, 1, 'SBIN0001234', 'Savings', 50000.00, '2024-08-01', 'Active'),
+(234567890123, 2, 'HDFC0005678', 'Current', 75000.00, '2024-08-02', 'Active'),
+(345678901234, 3, 'ICIC0003456', 'Savings', 30000.00, '2024-08-03', 'Active'),
+(456789012345, 4, 'PNBN0007890', 'Savings', 60000.00, '2024-08-04', 'Active'),
+(567890123456, 5, 'BOFA0001122', 'Current', 80000.00, '2024-08-05', 'Active'),
+(678901234567, 6, 'AXIS0003344', 'Savings', 40000.00, '2024-08-06', 'Active'),
+(789012345678, 7, 'KKBK0005566', 'Current', 70000.00, '2024-08-07', 'Active'),
+(890123456789, 8, 'YESB0007788', 'Savings', 55000.00, '2024-08-08', 'Active'),
+(901234567890, 9, 'INDB0009900', 'Savings', 45000.00, '2024-08-09', 'Active'),
+(123450987654, 10, 'CANB0001133', 'Current', 90000.00, '2024-08-10', 'Active');
